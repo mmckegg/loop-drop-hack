@@ -41,13 +41,6 @@ module.exports = function(element){
     deckInstance.looper.setLength(length)
   })
 
-  handleKey('space', function(e){
-    if (e.shiftKey){
-      currentDeckId = currentDeckId === 'left' ? 'right' : 'left'
-      refreshRepeat()
-    }
-  })
-
   handleKey('enter', function(){
     var deckInstance = window.context.instances[currentDeckId]
     deckInstance.looper.store()
@@ -79,7 +72,7 @@ module.exports = function(element){
         deckInstance.playback.write(data)
       }
 
-    } else { 
+    } else {
 
       downNotes = downNotes.filter(function(note){
         return !(note[0] == data[0] && note[1] == data[1])

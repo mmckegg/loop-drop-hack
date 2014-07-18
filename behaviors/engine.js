@@ -39,7 +39,6 @@ module.exports = function(body){
 
   var instances = {
     left: createInstance(audioContext, output, MidiStream('Launchpad', 0)),
-    right: createInstance(audioContext, output, MidiStream('Launchpad', 1))
   }
 
   // start clock
@@ -89,7 +88,7 @@ function createInstance(audioContext, output, midiStream){
   var instance = Soundbank(audioContext)
 
   instance.playback = Playback(instance)
-  
+
   var scheduler = audioContext.scheduler
   var ditty = Ditty(scheduler)
 
@@ -109,8 +108,8 @@ function createInstance(audioContext, output, midiStream){
   })
 
   instance.looper = MidiLooper(scheduler.getCurrentPosition, {
-    exclude: exclude, 
-    noRepeat: noRepeat, 
+    exclude: exclude,
+    noRepeat: noRepeat,
     loopTransforms: loopTransforms
   })
 

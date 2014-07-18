@@ -155,9 +155,6 @@ function loadKit(deckId, kitName){
       if (deckId === 'left'){
         chrome.storage.local.set({'lastLeftKit': kitName})
       }
-      if (deckId === 'right'){
-        chrome.storage.local.set({'lastRightKit': kitName})
-      }
     }
   })
 }
@@ -210,12 +207,9 @@ function handleError(err){
 }
 
 function loadLastKits(){
-  chrome.storage.local.get(['lastLeftKit', 'lastRightKit'], function(items) {
+  chrome.storage.local.get(['lastLeftKit'], function(items) {
     if (items.lastLeftKit){
       window.events.emit('loadKit', 'left', items.lastLeftKit)
-    }
-    if (items.lastRightKit){
-      window.events.emit('loadKit', 'right', items.lastRightKit)
     }
   })
 }
@@ -290,7 +284,7 @@ function setupTapeLoops(loopLength){
 
   function setupWriters(){
     var writer = TapeLoop(files, {
-      length: (audioContext.sampleRate * 4) * (loopLength || 10), 
+      length: (audioContext.sampleRate * 4) * (loopLength || 10),
       sampleRate: audioContext.sampleRate,
       offset: offset
     })
