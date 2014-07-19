@@ -151,7 +151,7 @@ function createInstance(audioContext, output, midiStream){
   ditty.pipe(instance.playback).pipe(instance.looper).pipe(ditty)
 
   // connect to output
-  //instance.connect(output)
+  instance.connect(output)
   return instance
 }
 
