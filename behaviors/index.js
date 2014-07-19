@@ -27,7 +27,8 @@ var behaviors = {
     vu: require('./window/vu'),
     projectButtons: require('./window/project_buttons'),
     qwertyKeys: require('./window/qwerty_keys.js')
-  }
+  },
+  'soundbanks': require('./soundbanks')
 }
 
 module.exports = function(target){
