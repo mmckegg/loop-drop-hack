@@ -42,7 +42,7 @@ module.exports = function(body){
   output.connect(rms.input)
 
   var instances = {
-    left: createInstance(audioContext, output, MidiStream('Launchpad Mini 2', 0)),
+    left: createInstance(audioContext, output, MidiStream('Launchpad Mini', 0)),
   }
 
   var stream = Through()
