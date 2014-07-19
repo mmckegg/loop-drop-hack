@@ -22,6 +22,7 @@ var decode = Through(function(data){
 })
 
 setTimeout(function(){
+
   var stream = Through(function(object){
 
     if (!remotes[object.clientId]){
@@ -40,7 +41,8 @@ setTimeout(function(){
     }
   })
 
-  window.context.externalStream.pipe(decode).pipe(stream)
+  window.context.serverStream.pipe(decode).pipe(stream)
+  
 }, 4000)
 
 

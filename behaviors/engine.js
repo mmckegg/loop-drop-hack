@@ -16,6 +16,8 @@ var AudioRMS = require('../lib/audio-rms')
 
 var Through = require('through')
 
+var websocket = require('websocket-stream')
+
 module.exports = function(body){
   var audioContext = window.context.audio
 
@@ -47,7 +49,7 @@ module.exports = function(body){
 
   var stream = Through()
 
-  var clientId = 'dhuqwiudhqwued'
+  var clientId = Math.random() + Date.now()
 
   instances.left.on("change", function(descriptor){
     stream.queue(JSON.stringify({clientId: clientId, updateSlot: descriptor}))
@@ -56,9 +58,8 @@ module.exports = function(body){
     stream.queue(JSON.stringify({clientId: clientId, updateLoop: descriptor}))
   })
 
-  window.context.externalStream = stream
-
-
+  window.context.serverStream = websocket('ws://192.168.88.184:7777')
+  stream.pipe(window.context.serverStream)
 
   var remoteInstances = []
 
