@@ -15,8 +15,8 @@
   <div class='.body'>
     <div>
 
-      <select data-behavior='editor.nodes.select' 
-        t:bind:data-value='slot.node' 
+      <select data-behavior='editor.nodes.select'
+        t:bind:data-value='slot.node'
         data-path='slot.node'>
 
         <option value=''>Audio Slot</option>
@@ -24,9 +24,9 @@
 
       </select>
 
-      <select t:if='slot.node:is(inherit)' 
-        data-behavior='editor.nodes.select' 
-        t:bind:data-value='slot.from' 
+      <select t:if='slot.node:is(inherit)'
+        data-behavior='editor.nodes.select'
+        t:bind:data-value='slot.from'
         data-path='slot.from'>
 
         <optgroup label='Slots' t:view='slotOptions'/>
@@ -45,7 +45,7 @@
       </select>
 
     </div>
-    <div t:unless='slot.node:is(inherit)' >  
+    <div t:unless='slot.node:is(inherit)' >
       <select data-behavior='editor.nodes.select' t:bind:data-value='slot.inputMode' data-path='slot.inputMode'>
         <option value='off'>No Input</option>
         <option value=''>Accept Input</option>
@@ -73,9 +73,9 @@
       <div class='.title' t:bind='.url|:text(empty sample)' />
       <div class='.body'>
         <div>
-          <select 
-            data-behavior='editor.nodes.select' 
-            t:bind:data-value='.mode|:text(hold)' 
+          <select
+            data-behavior='editor.nodes.select'
+            t:bind:data-value='.mode|:text(hold)'
             t:bind:data-path=':path(mode)'>
 
             <option value='oneshot'>Oneshot</option>
@@ -87,27 +87,27 @@
         </div>
         <div class='-flex'>
           <div class='.title'>amp</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
-            data-f='dB' 
-            t:bind='.amp' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
+            data-f='dB'
+            t:bind='.amp'
             t:bind:data-path=':path(amp)' />
         </div>
         <div class='-flex'>
           <div class='.title'>transpose</div>
           <div t:bind:class=':mcss(Param)'
-            t:view='param' 
-            data-behavior='editor.param' 
-            data-f='semitone' 
-            data-default='0' 
-            t:bind='.transpose' 
-            t:bind:data-path=':path(transpose)' 
+            t:view='param'
+            data-behavior='editor.param'
+            data-f='semitone'
+            data-default='0'
+            t:bind='.transpose'
+            t:bind:data-path=':path(transpose)'
           />
         </div>
       </div>
       <div t:bind:class=':mcss(SampleTrimmer)' t:view='sampleTrimmer'
-        data-behavior='editor.sampleTrimmer' 
-        t:bind:data-path=':path' 
+        data-behavior='editor.sampleTrimmer'
+        t:bind:data-path=':path'
       />
     </t:placeholder>
 
@@ -116,9 +116,9 @@
       <div class='.body'>
 
         <div>
-          <select 
-            data-behavior='editor.nodes.select' 
-            t:bind:data-value='.shape|:text(sine)' 
+          <select
+            data-behavior='editor.nodes.select'
+            t:bind:data-value='.shape|:text(sine)'
             t:bind:data-path=':path(shape)'>
 
             <option value='sine'>Sine</option>
@@ -130,31 +130,31 @@
 
         <div class='-flex'>
           <div class='.title'>amp</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
-            data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
+            data-f='dB'
             data-default='0.6'
-            t:bind='.amp' 
-            t:bind:data-path=':path(amp)' 
+            t:bind='.amp'
+            t:bind:data-path=':path(amp)'
           />
         </div>
 
         <div class='-flex'>
           <div class='.title'>freq</div>
-          <div t:bind:class=':mcss(Param)' 
-            t:view='param' 
-            data-behavior='editor.param' 
-            data-f='arfo' 
+          <div t:bind:class=':mcss(Param)'
+            t:view='param'
+            data-behavior='editor.param'
+            data-f='arfo'
             data-default='440'
-            t:bind='.frequency' 
-            t:bind:data-path=':path(frequency)' 
+            t:bind='.frequency'
+            t:bind:data-path=':path(frequency)'
           />
         </div>
 
         <div>
-          <select 
-            data-behavior='editor.nodes.scaleSelector' 
-            t:bind:data-value='.note:scale' 
+          <select
+            data-behavior='editor.nodes.scaleSelector'
+            t:bind:data-value='.note:scale'
             t:bind:data-path=':path(note)'>
 
             <option value=''>No Scale</option>
@@ -173,7 +173,7 @@
 
       </div>
 
-      <div t:bind:class=':mcss(Piano)' 
+      <div t:bind:class=':mcss(Piano)'
         t:bind='.note'
         t:bind:data-path=':path(note, root)'
         data-behavior='editor.noteChooser'
@@ -183,11 +183,11 @@
     </t:placeholder>
 
   </div>
-    
-  <div 
-    t:unless='slot.sources:isLinked' 
-    data-behavior='editor.nodes.spawner' 
-    data-path='slot.sources' 
+
+  <div
+    t:unless='slot.sources:isLinked'
+    data-behavior='editor.nodes.spawner'
+    data-path='slot.sources'
     t:bind:class=':mcss(Spawner -source)'>
 
     <a href='#' data-node='sample'>sample</a>
@@ -202,9 +202,9 @@
       <div class='.title'>Filter</div>
       <div class='.body'>
         <div>
-          <select 
-            data-behavior='editor.nodes.select' 
-            t:bind:data-value='.type|:text(lowpass)' 
+          <select
+            data-behavior='editor.nodes.select'
+            t:bind:data-value='.type|:text(lowpass)'
             t:bind:data-path=':path(type)'>
 
             <option value='lowpass'>Lowpass</option>
@@ -212,24 +212,24 @@
           </select>
         </div>
         <div class='-flex'>
-          <div t:bind:class=':mcss(Param)' 
-            t:view='param' 
-            data-behavior='editor.param' 
-            data-f='arfo' 
+          <div t:bind:class=':mcss(Param)'
+            t:view='param'
+            data-behavior='editor.param'
+            data-f='arfo'
             data-default='350'
             t:bind='.frequency'
-            t:bind:data-path=':path(frequency)' 
+            t:bind:data-path=':path(frequency)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>resonance</div>
-          <div t:bind:class=':mcss(Param)' 
-            t:view='param' 
-            data-behavior='editor.param' 
-            data-f='ratio100' 
+          <div t:bind:class=':mcss(Param)'
+            t:view='param'
+            data-behavior='editor.param'
+            data-f='ratio100'
             data-default='1'
             t:bind='.Q'
-            t:bind:data-path=':path(Q)' 
+            t:bind:data-path=':path(Q)'
           />
         </div>
       </div>
@@ -239,38 +239,38 @@
       <div class='.body'>
         <div class='-flex'>
           <div class='.title'>pre band</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
             data-behavior='editor.param' data-f='ratio'
             data-default='0.5'
-            t:bind='.band' 
-            t:bind:data-path=':path(band)' 
+            t:bind='.band'
+            t:bind:data-path=':path(band)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>color</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
             data-behavior='editor.param' data-f='arfo'
             data-default='800'
-            t:bind='.color' 
-            t:bind:data-path=':path(color)' 
+            t:bind='.color'
+            t:bind:data-path=':path(color)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>gain</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param' data-f='dB'
             data-default='1'
-            t:bind='.gain' 
-            t:bind:data-path=':path(gain)' 
+            t:bind='.gain'
+            t:bind:data-path=':path(gain)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>post cut</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' data-f='arfo' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param' data-f='arfo'
             data-default='3000'
-            t:bind='.postCut' 
-            t:bind:data-path=':path(postCut)' 
+            t:bind='.postCut'
+            t:bind:data-path=':path(postCut)'
           />
         </div>
       </div>
@@ -281,20 +281,20 @@
       <div class='.body'>
         <div class='-flex'>
           <div class='.title'>bit depth</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
             data-behavior='editor.param' data-f='bit'
             data-default='8'
-            t:bind='.bitDepth' 
-            t:bind:data-path=':path(bitDepth)' 
+            t:bind='.bitDepth'
+            t:bind:data-path=':path(bitDepth)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>freq</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
             data-behavior='editor.param' data-f='sampleRatio'
             data-default='1'
-            t:bind='.frequency' 
-            t:bind:data-path=':path(frequency)' 
+            t:bind='.frequency'
+            t:bind:data-path=':path(frequency)'
           />
         </div>
       </div>
@@ -312,57 +312,57 @@
         </div>
         <div class='-flex'>
           <div class='.title'>Time</div>
-          <div t:unless='.sync' t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
+          <div t:unless='.sync' t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
             data-default='0.25'
-            data-f='ms' 
+            data-f='ms'
             t:bind='.time'
-            t:bind:data-path=':path(time)' 
+            t:bind:data-path=':path(time)'
           />
-          <div t:if='.sync' t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
+          <div t:if='.sync' t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
             data-default='0.25'
-            data-f='beat' 
+            data-f='beat'
             t:bind='.time'
-            t:bind:data-path=':path(time)' 
+            t:bind:data-path=':path(time)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>Feedback</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param' data-f='dB'
             data-default='0.6'
             t:bind='.feedback'
-            t:bind:data-path=':path(feedback)' 
+            t:bind:data-path=':path(feedback)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>Cutoff</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
             data-behavior='editor.param' data-f='arfo'
             data-default='20000'
             t:bind='.cutoff'
-            t:bind:data-path=':path(cutoff)' 
+            t:bind:data-path=':path(cutoff)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>Wet</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
-            data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
+            data-f='dB'
             data-default='1'
             t:bind='.wet'
-            t:bind:data-path=':path(wet)' 
+            t:bind:data-path=':path(wet)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>Dry</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
-            data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
+            data-f='dB'
             data-default='1'
             t:bind='.dry'
-            t:bind:data-path=':path(dry)' 
+            t:bind:data-path=':path(dry)'
           />
         </div>
       </div>
@@ -372,12 +372,12 @@
       <div class='.title'>Gain</div>
       <div class='.body'>
         <div class='-flex'>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
-            data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
+            data-f='dB'
             data-default='1'
             t:bind='.gain'
-            t:bind:data-path=':path(gain)' 
+            t:bind:data-path=':path(gain)'
           />
         </div>
       </div>
@@ -387,9 +387,9 @@
       <div class='.title'>Dipper</div>
       <div class='.body'>
         <div>
-          <select 
-            data-behavior='editor.nodes.select' 
-            t:bind:data-value='.mode|:text(modulate)' 
+          <select
+            data-behavior='editor.nodes.select'
+            t:bind:data-value='.mode|:text(modulate)'
             t:bind:data-path=':path(mode)'>
 
             <option value='modulate'>Modulate</option>
@@ -399,10 +399,10 @@
 
         <div class='-flex'>
           <div class='.title'>ratio</div>
-          <div t:bind:class=':mcss(Param -value)' t:view='param' 
+          <div t:bind:class=':mcss(Param -value)' t:view='param'
             data-behavior='editor.param' data-f='ratio'
             data-default='1'
-            t:bind='.ratio' 
+            t:bind='.ratio'
             t:bind:data-path=':path(ratio)'
           />
         </div>
@@ -415,32 +415,32 @@
       <div class='.body'>
         <div class='-flex'>
           <div class='.title'>transpose</div>
-          <div t:bind:class=':mcss(Param -value)' t:view='param' 
+          <div t:bind:class=':mcss(Param -value)' t:view='param'
             data-behavior='editor.param' data-f='semitoneUp'
             data-default='12'
-            t:bind='.transpose' 
+            t:bind='.transpose'
             t:bind:data-path=':path(transpose)'
           />
         </div>
 
         <div class='-flex'>
           <div class='.title'>Wet</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
-            data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
+            data-f='dB'
             data-default='1'
             t:bind='.wet'
-            t:bind:data-path=':path(wet)' 
+            t:bind:data-path=':path(wet)'
           />
         </div>
         <div class='-flex'>
           <div class='.title'>Dry</div>
-          <div t:bind:class=':mcss(Param)' t:view='param' 
-            data-behavior='editor.param' 
-            data-f='dB' 
+          <div t:bind:class=':mcss(Param)' t:view='param'
+            data-behavior='editor.param'
+            data-f='dB'
             data-default='0'
             t:bind='.dry'
-            t:bind:data-path=':path(dry)' 
+            t:bind:data-path=':path(dry)'
           />
 
       </div>
@@ -448,9 +448,9 @@
 
   </div>
 
-  <div 
-    t:unless='slot.sources:isLinked' 
-    data-behavior='editor.nodes.spawner' 
+  <div
+    t:unless='slot.sources:isLinked'
+    data-behavior='editor.nodes.spawner'
     data-path='slot.processors' t:bind:class=':mcss(Spawner -processor)'>
     <a href='#' data-node='gain'>gain</a>
     <a href='#' data-node='delay'>delay</a>
@@ -466,15 +466,15 @@
     <div class='.title'>Output</div>
     <div class='.body'>
       <div class='-flex'>
-        <div t:bind:class=':mcss(Param)' t:view='param' 
-          data-behavior='editor.param' 
+        <div t:bind:class=':mcss(Param)' t:view='param'
+          data-behavior='editor.param'
           data-f='dB'
           data-default='1'
           t:bind='slot.volume'
-          data-path='slot.volume' 
+          data-path='slot.volume'
         />
       </div>
-      <div>  
+      <div>
         <select data-behavior='editor.nodes.select' t:bind:data-value='slot.output' data-path='slot.output'>
           <option value=''>Master</option>
           <option value='meddler'>Meddler</option>
