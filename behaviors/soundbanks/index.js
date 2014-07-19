@@ -20,10 +20,30 @@ module.exports = {
     
     function refreshRemotes(){
       var result = [];
+      el.innerHTML = ''
+
       Object.keys(remotes).forEach(function(clientId){
-        result.push(h('li', String(clientId)))
+        var instance = remotes[clientId]
+        var li = document.createElement('li')
+        el.appendChild(li)
+
+        li.appendChild(document.createTextNode(clientId))
+
+        var muteButton = document.createElement('a')
+        muteButton.innerHTML = 'MUTE'
+  
+        muteButton.onclick = function(){
+          if (instance.gain.value){
+            instance.gain.value = 0
+            muteButton.innerHTML = 'UNMUTE'
+          } else {
+            instance.gain.value = 1
+            muteButton.innerHTML = 'MUTE'
+          }
+        }
+
+        li.appendChild(muteButton)
       })
-      el.innerHTML = result.join('')
     }
 
     window.events.on('newRemote', refreshRemotes)
